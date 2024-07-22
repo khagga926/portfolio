@@ -67,7 +67,7 @@ export const Projects = () => {
                       className="nav-pills mb-5 justify-content-center align-items-center"
                       id="pills-tab"
                     >
-                      <Nav.Item>
+                      {/* <Nav.Item>
                         <Nav.Link eventKey="first">Tab 1</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
@@ -75,7 +75,7 @@ export const Projects = () => {
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item>
+                      </Nav.Item> */}
                     </Nav>
                     <Tab.Content
                       id="slideInUp"

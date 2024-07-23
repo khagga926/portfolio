@@ -76,7 +76,7 @@ export const Banner = () => {
                     printer took a galley of type and scrambled it to make a
                     type specimen book.
                   </p>
-                  <button onClick={() => console.log('connect')}>
+                  <button onClick={() => (window.location.href = '#contact')}>
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>

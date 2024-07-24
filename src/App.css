@@ -31,8 +31,8 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
+  background-color: #040a05 !important; /* Dark Background */
+  color: #91b498 !important; /* Accent Color 1 for text */
   font-family: 'Centra', sans-serif !important;
 }
 
@@ -86,11 +86,11 @@ select:focus {
 }
 
 p.success {
-  color: green;
+  color: #91b498; /* Accent Color 1 */
 }
 
 p.danger {
-  color: red;
+  color: #6b7b6e; /* Accent Color 2 */
 }
 /* NavBar */
 nav.navbar {
@@ -103,14 +103,14 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: #000f1e; /* Dark Blue */
 }
 nav.navbar a.navbar-brand {
   width: 9%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: #fff !important;
+  color: #91b498 !important; /* Accent Color 1 */
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
@@ -132,21 +132,21 @@ span.navbar-text {
 .social-icon a {
   width: 42px;
   height: 42px;
-  background: rgba(217, 217, 217, 0.1);
+  background: rgba(145, 180, 152, 0.1); /* Accent Color 1 with opacity */
   display: inline-flex;
   border-radius: 50%;
   margin-right: 6px;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(145, 180, 152, 0.5); /* Accent Color 1 with opacity */
 }
 .social-icon a::before {
   content: '';
   width: 42px;
   height: 42px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #91b498; /* Accent Color 1 */
   border-radius: 50%;
   transform: scale(0);
   transition: 0.3s ease-in-out;
@@ -161,12 +161,12 @@ span.navbar-text {
 }
 .social-icon a:hover img {
   filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
-    hue-rotate(346deg) brightness(95%) contrast(86%);
+    hue-rotate(170deg) brightness(95%) contrast(86%); /* Adjusted hue-rotate for new palette */
 }
 .navbar-text button {
   font-weight: 700;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #91b498; /* Accent Color 1 */
+  border: 1px solid #91b498; /* Accent Color 1 */
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
@@ -182,14 +182,14 @@ span.navbar-text {
   width: 0%;
   height: 100%;
   position: absolute;
-  background-color: #fff;
+  background-color: #91b498; /* Accent Color 1 */
   left: 0;
   top: 0;
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
 .navbar-text button:hover {
-  color: #121212;
+  color: #040a05; /* Dark Background */
 }
 .navbar-text button:hover::before {
   content: '';
@@ -207,19 +207,19 @@ nav.navbar .navbar-toggler-icon {
   height: 17px;
   background-image: none;
   position: relative;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #91b498; /* Accent Color 1 */
   transition: all 300ms linear;
   top: -2px;
 }
 nav.navbar .navbar-toggler-icon:focus {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #91b498; /* Accent Color 1 */
 }
 nav.navbar .navbar-toggler-icon:after,
 nav.navbar .navbar-toggler-icon:before {
   width: 24px;
   position: absolute;
   height: 2px;
-  background-color: #fff;
+  background-color: #91b498; /* Accent Color 1 */
   top: 0;
   left: 0;
   content: '';
@@ -231,41 +231,44 @@ nav.navbar .navbar-toggler-icon:after {
 }
 nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:after {
   transform: rotate(45deg);
-  background-color: #fff;
+  background-color: #91b498; /* Accent Color 1 */
   height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:before {
   transform: translateY(8px) rotate(-45deg);
-  background-color: #fff;
+  background-color: #91b498; /* Accent Color 1 */
   height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   border-color: transparent;
 }
 
-/* Banner CSS*/
+/* Banner CSS */
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background-image: url('./assets/img/banner-bg.png'); /* Ensure new image matches the palette */
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(
     90.21deg,
-    rgba(170, 54, 124, 0.5) -5.91%,
-    rgba(74, 47, 189, 0.5) 111.58%
+    rgba(145, 180, 152, 0.5) -5.91%,
+    rgba(107, 123, 110, 0.5) 111.58%
   );
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(145, 180, 152, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  color: #040a05; /* Changed to Dark Background color for contrast */
 }
+
 .banner h1 {
   font-size: 65px;
   font-weight: 700;
@@ -273,35 +276,45 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+  color: #91b498; /* Changed to Accent Color 1 */
 }
+
 .banner p {
-  color: #b8b8b8;
+  color: #6b7b6e; /* Changed to Accent Color 2 */
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
 }
+
 .banner button {
-  color: #fff;
+  color: #91b498; /* Changed to Accent Color 1 */
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
+  border: 1px solid #91b498; /* Added border to match the text */
+  padding: 10px 20px; /* Adjusted padding for better appearance */
+  background-color: transparent; /* Ensured background is transparent */
 }
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
+
 .banner button:hover svg {
   margin-left: 25px;
 }
+
 .banner img {
   animation: updown 3s linear infinite;
 }
+
 @keyframes updown {
   0% {
     transform: translateY(-20px);
@@ -313,8 +326,9 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
     transform: translateY(-20px);
   }
 }
+
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
+  border-right: 0.08em solid #0e3a4a; /* Changed to Medium Blue */
 }
 
 /* Skills */

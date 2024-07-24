@@ -88,7 +88,7 @@ export const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={navIcon4} alt="Twitter" />
+                <img src={navIcon4} alt="X" />
               </a>
             </div>
             <button

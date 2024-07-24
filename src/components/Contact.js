@@ -25,21 +25,30 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setButtonText('Sending...')
-    let response = await fetch('http://localhost:5000/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify(formDetails),
-    })
-    setButtonText('Send')
-    let result = await response.json()
-    setFormDetails(formInitialDetails)
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully' })
-    } else {
+    try {
+      let response = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(formDetails),
+      })
+      setButtonText('Send')
+      let result = await response.json()
+      setFormDetails(formInitialDetails)
+      if (result.status === 'success') {
+        setStatus({ success: true, message: 'Message sent successfully' })
+      } else {
+        setStatus({
+          success: false,
+          message:
+            result.message || 'Something went wrong, please try again later.',
+        })
+      }
+    } catch (error) {
+      setButtonText('Send')
       setStatus({
-        succes: false,
+        success: false,
         message: 'Something went wrong, please try again later.',
       })
     }
@@ -67,7 +76,7 @@ export const Contact = () => {
                 <Col size={12} sm={6} className="px-1">
                   <input
                     type="text"
-                    value={formDetails.lasttName}
+                    value={formDetails.lastName} // Fixed typo
                     placeholder="Last Name"
                     onChange={(e) => onFormUpdate('lastName', e.target.value)}
                   />

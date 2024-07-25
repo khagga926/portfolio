@@ -3,6 +3,7 @@ import { ProjectCard } from './ProjectCard'
 import projImg1 from '../assets/img/project-img1.png'
 import projImg2 from '../assets/img/project-img2.png'
 import projImg3 from '../assets/img/project-img3.png'
+import projImg4 from '../assets/img/project-img4.png'
 import colorSharp2 from '../assets/img/color-sharp2.png'
 import 'animate.css'
 import TrackVisibility from 'react-on-screen'
@@ -10,34 +11,40 @@ import TrackVisibility from 'react-on-screen'
 export const Projects = () => {
   const projects = [
     {
-      title: 'Business Startup',
-      description: 'Design & Development',
+      title: 'Personal Portfolio Website',
+      description:
+        'Designed and developed a personal portfolio showcasing projects and skills',
       imgUrl: projImg1,
+      demoLink: '',
+      sourceLink: 'http://github.com/yourportfolio',
+      technologies: ['React', 'Node.js', 'Bootstrap', 'Animate CSS'],
     },
     {
-      title: 'Business Startup',
-      description: 'Design & Development',
+      title: 'TraceView - Software Trace Visualization',
+      description:
+        'Created a VSCode extension for visualizing software traces, with nearly 200 installs.',
       imgUrl: projImg2,
+      demoLink:
+        'https://marketplace.visualstudio.com/items?itemName=TeamBlue.traceview-final',
+      sourceLink: 'https://github.com/khagga926/TraceView',
+      technologies: ['TypeScript', 'VSCode API', 'Chart.js,'],
     },
     {
-      title: 'Business Startup',
-      description: 'Design & Development',
+      title: 'Customer Module',
+      description:
+        'Developed a module to manage customer data and interactions efficiently.',
       imgUrl: projImg3,
+      demoLink: '',
+      sourceLink: 'https://github.com/khagga926/customer-module',
+      technologies: ['Vue.js', 'Node.js', 'Express', 'MongoDB'],
     },
     {
-      title: 'Business Startup',
-      description: 'Design & Development',
-      imgUrl: projImg1,
-    },
-    {
-      title: 'Business Startup',
-      description: 'Design & Development',
-      imgUrl: projImg2,
-    },
-    {
-      title: 'Business Startup',
-      description: 'Design & Development',
-      imgUrl: projImg3,
+      title: 'The News Room',
+      description: 'Developed a personalized web-based news portal.',
+      imgUrl: projImg4,
+      demoLink: '',
+      sourceLink: '',
+      technologies: ['Javascript', 'HTML/CSS', 'Express', 'Node.js'],
     },
   ]
 

@@ -1,6 +1,8 @@
-import meter1 from '../assets/img/meter1.svg'
-import meter2 from '../assets/img/meter2.svg'
-import meter3 from '../assets/img/meter3.svg'
+import meterwebdev from '../assets/img/meterwebdev.png'
+import meteruiux from '../assets/img/meteruiux.png'
+import meterfrontend from '../assets/img/meterfrontend.png'
+import meterbackend from '../assets/img/meterbackend.png'
+import meterdatabase from '../assets/img/meterdatabase.png'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import colorSharp from '../assets/img/color-sharp.png'
@@ -34,9 +36,10 @@ export const Skills = () => {
             <div className="skill-bx wow zoomIn">
               <h2>Skills</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.<br></br> Lorem Ipsum has been the industrys standard
-                dummy text.
+                Proficient in a range of modern web technologies, I bring a
+                blend of technical expertise and creative problem-solving to
+                every project. My strengths include both front-end and back-end
+                development, ensuring seamless and efficient solutions.
               </p>
               <Carousel
                 responsive={responsive}
@@ -44,20 +47,24 @@ export const Skills = () => {
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meterwebdev} alt="Image" />
                   <h5>Web Development</h5>
                 </div>
                 <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Brand Identity</h5>
+                  <img src={meteruiux} alt="Image" />
+                  <h5>UI/UX Design</h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Logo Design</h5>
+                  <img src={meterbackend} alt="Image" />
+                  <h5>Back-End Technologies</h5>
                 </div>
                 <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
+                  <img src={meterfrontend} alt="Image" />
+                  <h5>Front-End Technologies</h5>
+                </div>
+                <div className="item">
+                  <img src={meterdatabase} alt="Image" />
+                  <h5>Database Management</h5>
                 </div>
               </Carousel>
             </div>

@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the repository for my personal portfolio website. This project showcases my skills, projects, and experience in web development, designed to provide an overview of my professional profile.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Description](#project-description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact Information](#contact-information)
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This portfolio website serves as a digital showcase of my work as a full-stack developer. It includes sections such as an introduction, skills, projects, and a contact form. The website is built using modern web technologies and designed to be responsive and user-friendly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Responsive Design:** Ensures the website is accessible and looks good on all devices.
+- **Interactive Elements:** Includes a carousel for projects, skill progress rings, and a dynamic contact form.
+- **Email Notifications:** Users can contact me via a form, and I receive an email notification.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Front-End:** React, React Bootstrap, CSS3, HTML5
+- **Back-End:** Node.js, Express
+- **Email Service:** Nodemailer
+- **Version Control:** Git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup and Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository:**
+   git clone https://github.com/khagga926/portfolio
+   cd yourrepositoryname
 
-### `npm run eject`
+2. **Install dependencies:**
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set up environment variables:**
+   Create a .env file in the root directory and add the following variables:
+   EMAIL_ADDRESS=your_email@example.com
+   EMAIL_PASS=your_email_password
+   REACT_APP_MAILCHIMP_URL=your_mailchimp_url
+   REACT_APP_MAILCHIMP_U=your_mailchimp_u
+   REACT_APP_MAILCHIMP_ID=your_mailchimp_id
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Run the application:**
+   npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to http://localhost:3000 in your browser to view the portfolio website. The contact form can be used to send messages directly to my email.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions are welcome! Please follow these steps to contribute:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Fork the repository.
+- Create a new branch (git checkout -b feature/your-feature).
+- Make your changes and commit them (git commit -m 'Add your message').
+- Push to the branch (git push origin feature/your-feature).
+- Create a pull request.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Analyzing the Bundle Size
+## Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For any inquiries or feedback, feel free to contact me at mohammadahmad.shah@hotmail.com.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for visiting my portfolio website!

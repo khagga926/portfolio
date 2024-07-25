@@ -535,18 +535,11 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:after {
   margin: 5px 10px;
 }
 
-/* Contact Form CSS */
 .contact {
-  background: linear-gradient(
-    120deg,
-    #1d3557,
-    #457b9d
-  ); /* Berkeley Blue to Cerulean gradient */
+  background: linear-gradient(120deg, #1d3557, #457b9d);
   padding: 80px 20px;
   color: #f1faee; /* Honeydew */
   position: relative;
-  border-radius: 0; /* Removing border-radius for cleaner transition */
-  box-shadow: none; /* Removing shadow for a seamless look */
 }
 
 .contact img {
@@ -578,7 +571,11 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:after {
   padding: 20px;
   background-color: #f1faee; /* Honeydew */
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for form */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact form input,
@@ -622,6 +619,17 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon:after {
 
 .contact form button:hover {
   background-color: #457b9d; /* Cerulean */
+}
+
+.contact .status-message {
+  text-align: center;
+  font-size: 16px;
+  color: #e63946; /* Red (Pantone) */
+  margin-top: 10px;
+}
+
+.contact .status-message.success {
+  color: #457b9d; /* Cerulean for success */
 }
 
 /* Footer CSS */

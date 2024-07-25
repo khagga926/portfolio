@@ -24,29 +24,40 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setButtonText('Sending...')
-    try {
-      let response = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(formDetails),
+
+    // Validate form fields
+    if (
+      !formDetails.firstName ||
+      !formDetails.lastName ||
+      !formDetails.email ||
+      !formDetails.phone ||
+      formDetails.message.length < 30
+    ) {
+      setStatus({
+        success: false,
+        message:
+          'Please fill in all fields and ensure the message is at least 30 characters long.',
       })
-      setButtonText('Send')
-      let result = await response.json()
-      setFormDetails(formInitialDetails)
-      if (result.status === 'success') {
-        setStatus({ success: true, message: 'Message sent successfully' })
-      } else {
-        setStatus({
-          success: false,
-          message:
-            result.message || 'Something went wrong, please try again later.',
-        })
-      }
-    } catch (error) {
-      setButtonText('Send')
+      return
+    }
+
+    setButtonText('Sending...')
+    let response = await fetch('http://localhost:5000/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(formDetails),
+    })
+    setButtonText('Send')
+    let result = await response.json()
+    setFormDetails(formInitialDetails)
+    if (result.code === 200) {
+      setStatus({
+        success: true,
+        message: 'Message sent successfully. Thank you for contacting us!',
+      })
+    } else {
       setStatus({
         success: false,
         message: 'Something went wrong, please try again later.',
@@ -76,7 +87,7 @@ export const Contact = () => {
                 <Col size={12} sm={6} className="px-1">
                   <input
                     type="text"
-                    value={formDetails.lastName} // Fixed typo
+                    value={formDetails.lastName}
                     placeholder="Last Name"
                     onChange={(e) => onFormUpdate('lastName', e.target.value)}
                   />
@@ -107,18 +118,14 @@ export const Contact = () => {
                   <button type="submit">
                     <span>{buttonText}</span>
                   </button>
-                </Col>
-                {status.message && (
-                  <Col>
+                  {status.message && (
                     <p
-                      className={
-                        status.success === false ? 'danger' : 'success'
-                      }
+                      className={`status-message ${status.success ? 'success' : 'danger'}`}
                     >
                       {status.message}
                     </p>
-                  </Col>
-                )}
+                  )}
+                </Col>
               </Row>
             </form>
           </Col>

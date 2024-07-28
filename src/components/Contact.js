@@ -42,12 +42,14 @@ export const Contact = () => {
 
     setButtonText('Sending...')
     try {
-      let response = await fetch('https://moshah.tech/contact', {
-        // Update with the correct server URL
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json;charset=utf-8' },
-        body: JSON.stringify(formDetails),
-      })
+      let response = await fetch(
+        'https://personal-portfolio-7de0e26d81f4.herokuapp.com/contact',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json;charset=utf-8' },
+          body: JSON.stringify(formDetails),
+        },
+      )
 
       setFormDetails(formInitialDetails)
       setButtonText('Send')

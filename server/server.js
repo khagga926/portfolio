@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const nodemailer = require('nodemailer')
 require('dotenv').config() // Load environment variables from .env file
+const path = require('path')
 
 const app = express()
 const router = express.Router()
@@ -9,6 +10,9 @@ const router = express.Router()
 // Middleware setup
 app.use(cors()) // Enable CORS
 app.use(express.json()) // Parse JSON bodies
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')))
 
 // Start the server
 const port = process.env.PORT || 5000
@@ -41,8 +45,8 @@ router.post('/contact', (req, res) => {
 
   // Email configuration
   const mailOptions = {
-    from: process.env.EMAIL_ADDRESS, // Use the authenticated email address here
-    to: process.env.EMAIL_ADDRESS, // You can still receive emails here
+    from: process.env.EMAIL_ADDRESS,
+    to: process.env.EMAIL_ADDRESS,
     subject: `Contact Form Submission - ${fullName}`,
     html: `<p><strong>Name:</strong> ${fullName}</p>
            <p><strong>Email:</strong> ${email}</p>
@@ -68,5 +72,10 @@ router.post('/contact', (req, res) => {
   })
 })
 
-// Use the router for all routes
-app.use('/', router)
+// Use the router for the '/contact' route
+app.use('/contact', router)
+
+// Serve the React app for all other routes
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})

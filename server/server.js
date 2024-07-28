@@ -11,7 +11,8 @@ app.use(cors()) // Enable CORS
 app.use(express.json()) // Parse JSON bodies
 
 // Start the server
-app.listen(5000, () => console.log('Server Running on port 5000'))
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Server Running on port ${port}`))
 
 // Nodemailer setup using environment variables
 const contactEmail = nodemailer.createTransport({

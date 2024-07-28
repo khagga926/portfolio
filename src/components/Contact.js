@@ -25,7 +25,6 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Validate form fields
     if (
       !formDetails.firstName ||
       !formDetails.lastName ||
@@ -42,26 +41,34 @@ export const Contact = () => {
     }
 
     setButtonText('Sending...')
-    let response = await fetch('http://localhost:5000/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify(formDetails),
-    })
-    setButtonText('Send')
-    let result = await response.json()
-    setFormDetails(formInitialDetails)
-    if (result.code === 200) {
-      setStatus({
-        success: true,
-        message: 'Message sent successfully. Thank you for contacting us!',
+    try {
+      let response = await fetch('https://moshah.tech/contact', {
+        // Update with the correct server URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify(formDetails),
       })
-    } else {
+
+      setFormDetails(formInitialDetails)
+      setButtonText('Send')
+
+      if (response.ok) {
+        setStatus({
+          success: true,
+          message: 'Message sent successfully. Thank you for contacting us!',
+        })
+      } else {
+        setStatus({
+          success: false,
+          message: 'Something went wrong, please try again later.',
+        })
+      }
+    } catch (error) {
       setStatus({
         success: false,
-        message: 'Something went wrong, please try again later.',
+        message: 'Network error. Please try again later.',
       })
+      setButtonText('Send')
     }
   }
 

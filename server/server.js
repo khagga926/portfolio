@@ -15,7 +15,9 @@ app.listen(5000, () => console.log('Server Running on port 5000'))
 
 // Nodemailer setup using environment variables
 const contactEmail = nodemailer.createTransport({
-  service: 'hotmail',
+  host: 'mail.moshah.tech',
+  port: 465,
+  secure: true, // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL_ADDRESS,
     pass: process.env.EMAIL_PASS,
@@ -50,7 +52,7 @@ router.post('/contact', (req, res) => {
   // Send email
   contactEmail.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error('Error sending email:', error) // Improved error logging
+      console.error('Error sending email:', error)
       return res.status(500).json({
         status: 'fail',
         message: 'Message not sent. Error occurred.',
@@ -58,7 +60,7 @@ router.post('/contact', (req, res) => {
       })
     }
     console.log('Email sent:', info.response)
-    res.status(200).json({
+    return res.status(200).json({
       status: 'success',
       message: 'Message sent successfully!',
     })

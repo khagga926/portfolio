@@ -62,11 +62,11 @@ export const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industrys
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Showcasing a diverse range of projects that highlight my
+                    skills in full-stack development, data visualization, and
+                    user-friendly web applications. Each project reflects my
+                    commitment to delivering high-quality, functional, and
+                    visually appealing solutions.
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
@@ -99,11 +99,12 @@ export const Projects = () => {
                       </Tab.Pane>
                       <Tab.Pane eventKey="section">
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
+                          Showcasing a diverse range of projects that highlight
+                          my skills in full-stack development, data
+                          visualization, and user-friendly web applications.
+                          Each project reflects my commitment to delivering
+                          high-quality, functional, and visually appealing
+                          solutions.
                         </p>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">

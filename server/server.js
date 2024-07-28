@@ -1,8 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const nodemailer = require('nodemailer')
-require('dotenv').config() // Load environment variables from .env file
 const path = require('path')
+require('dotenv').config() // Load environment variables from .env file
 
 const app = express()
 const router = express.Router()
@@ -12,11 +12,7 @@ app.use(cors()) // Enable CORS
 app.use(express.json()) // Parse JSON bodies
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')))
-
-// Start the server
-const port = process.env.PORT || 5000
-app.listen(port, () => console.log(`Server Running on port ${port}`))
+app.use(express.static(path.join(__dirname, '../build'))) // Adjusted path
 
 // Nodemailer setup using environment variables
 const contactEmail = nodemailer.createTransport({
@@ -72,10 +68,13 @@ router.post('/contact', (req, res) => {
   })
 })
 
-// Use the router for the '/contact' route
-app.use('/contact', router)
-
 // Serve the React app for all other routes
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  res.sendFile(path.join(__dirname, '../build', 'index.html')) // Adjusted path
 })
+
+app.use('/', router)
+
+// Start the server
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Server Running on port ${port}`))

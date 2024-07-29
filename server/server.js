@@ -16,12 +16,10 @@ app.use(express.static(path.join(__dirname, '../build'))) // Adjusted path
 
 // Nodemailer setup using environment variables
 const contactEmail = nodemailer.createTransport({
-  host: 'mail.moshah.tech',
-  port: 465,
-  secure: true, // true for 465, false for other ports
+  service: 'hotmail',
   auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_ADDRESS, // Updated to use environment variable
+    pass: process.env.EMAIL_PASS, // Updated to use environment variable
   },
 })
 

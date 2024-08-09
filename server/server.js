@@ -4,10 +4,6 @@ const nodemailer = require('nodemailer')
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') }) // Load environment variables from .env file
 
-// Log environment variables to verify they are loaded correctly
-console.log('EMAIL_ADDRESS:', process.env.EMAIL_ADDRESS)
-console.log('EMAIL_PASS:', process.env.EMAIL_PASS)
-
 // Check if environment variables are loaded
 if (!process.env.EMAIL_ADDRESS || !process.env.EMAIL_PASS) {
   console.error(
@@ -22,12 +18,6 @@ const router = express.Router()
 // Middleware setup
 app.use(cors()) // Enable CORS
 app.use(express.json()) // Parse JSON bodies
-
-// Add logging to verify middleware setup
-app.use((req, res, next) => {
-  console.log(`Received request: ${req.method} ${req.url}`)
-  next()
-})
 
 // Define the Nodemailer transporter
 const contactEmail = nodemailer.createTransport({
@@ -45,9 +35,6 @@ const contactEmail = nodemailer.createTransport({
 
 // Route to handle contact form submissions
 router.post('/contact', (req, res) => {
-  console.log('Received a POST request to /contact')
-  console.log('Request body:', req.body)
-
   const { firstName, lastName, email, phone, message } = req.body
   const fullName = `${firstName} ${lastName}`
 
@@ -62,9 +49,6 @@ router.post('/contact', (req, res) => {
            <p><strong>Message:</strong> ${message}</p>`,
   }
 
-  // Log mail options to verify configuration
-  console.log('Mail options:', mailOptions)
-
   // Send email
   contactEmail.sendMail(mailOptions, (error, info) => {
     if (error) {
@@ -75,7 +59,6 @@ router.post('/contact', (req, res) => {
         error: error.message,
       })
     }
-    console.log('Email sent:', info.response)
     return res.status(200).json({
       status: 'success',
       message: 'Message sent successfully!',

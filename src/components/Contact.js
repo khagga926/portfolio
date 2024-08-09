@@ -42,14 +42,16 @@ export const Contact = () => {
 
     setButtonText('Sending...')
     try {
-      let response = await fetch(
-        'https://personal-portfolio-7de0e26d81f4.herokuapp.com/contact',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json;charset=utf-8' },
-          body: JSON.stringify(formDetails),
-        },
-      )
+      console.log('Sending request to server with form details:', formDetails)
+      let response = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify(formDetails),
+      })
+
+      console.log('Server response:', response)
+      let result = await response.json()
+      console.log('Response JSON:', result)
 
       setFormDetails(formInitialDetails)
       setButtonText('Send')
@@ -66,6 +68,7 @@ export const Contact = () => {
         })
       }
     } catch (error) {
+      console.error('Error sending request:', error)
       setStatus({
         success: false,
         message: 'Network error. Please try again later.',

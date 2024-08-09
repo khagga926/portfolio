@@ -43,11 +43,14 @@ export const Contact = () => {
     setButtonText('Sending...')
     try {
       console.log('Sending request to server with form details:', formDetails)
-      let response = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json;charset=utf-8' },
-        body: JSON.stringify(formDetails),
-      })
+      let response = await fetch(
+        'https://personal-portfolio-7de0e26d81f4.herokuapp.com/contact',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json;charset=utf-8' },
+          body: JSON.stringify(formDetails),
+        },
+      )
 
       console.log('Server response:', response)
       let result = await response.json()
